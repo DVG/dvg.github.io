@@ -3,7 +3,8 @@ layout: post
 title:  "Object Oriented Test Design in Cucumber (Part 1)"
 author: DVG
 date:   2014-08-18 17:00:00
-categories: cucumber testing
+categories: testing
+tags: cucumber testing page-object
 ---
 
 There lots of advocacy against integration testing out there because over time they become too difficult to maintain and are hard to move with the application. Tests eventually become a burden and teams leave them behind, preferring to go without any sort of safety net to spending time updating capybara calls in 100 tests.
