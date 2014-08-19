@@ -10,4 +10,4 @@ twitter_username: bradleytemple
 github_username:  dvg
 
 # Build settings
-markdown: kramdown
+markdown: redcarpet
