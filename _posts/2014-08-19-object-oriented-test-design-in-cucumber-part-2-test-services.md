@@ -4,6 +4,7 @@ title:  "Object Oriented Test Design in Cucumber (Part 2) - Test Services"
 author: DVG
 categories: testing
 tags: cucumber testing service-objects
+comments: true
 ---
 
 **This is part of a series on object oriented integration test design. See the other parts:**
