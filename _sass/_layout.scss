@@ -234,3 +234,12 @@
         }
     }
 }
+
+.review-highlight {
+  background-color: $grey-color-light;
+  border-radius: 5px;
+  border: 1px solid $grey-color;
+  padding: 10px;
+  font-size: 20px;
+  font-style: italic;
+}
