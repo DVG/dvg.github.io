@@ -236,10 +236,29 @@
 }
 
 .review-highlight {
+  position: relative;
   background-color: $grey-color-light;
   border-radius: 5px;
   border: 1px solid $grey-color;
   padding: 10px;
+  padding-top: 25px;
   font-size: 20px;
   font-style: italic;
+  .fa {
+    float: left;
+  }
+  &:after {
+    font-size: 15px;
+    font-weight: bold;
+    padding: 3px;
+    padding-right: 6px;
+    content: "TL;DR";
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    background-color: white;
+    border: 1px solid $grey-color;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 }
