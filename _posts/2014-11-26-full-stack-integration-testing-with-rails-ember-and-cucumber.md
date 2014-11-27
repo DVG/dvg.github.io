@@ -166,7 +166,7 @@ PostsRoute = Ember.Route.extend
 
 First the application template:
 
-```emblem
+```
 #container.container
   nav.navbar.navbar-default role="navigation"
   .container-fluid
@@ -184,7 +184,7 @@ First the application template:
 
 And the posts template:
 
-```emblem
+```
 each post in controller
   h2 #{post.title}
   p
