@@ -56,17 +56,17 @@ If this was an ember data `save()` call with the ActiveModelAdapter, we could us
 
 For simplicity, I want to just be able to assign the json response to the SimpleErrors object, like so:
 
-```
-    authenticate: ->
-      self = @
-      @_super()
-      .then null, (error) =>
-        self.set 'errors', SimpleErrors.create(error)
+```coffeescript
+authenticate: ->
+  self = @
+  @_super()
+  .then null, (error) =>
+    self.set 'errors', SimpleErrors.create(error)
 ```
 
 This will, in effect set the "errors" property on the SimpleErrors object to the JSON Response. However it will be a normal Javascript Object and not an Ember.Object. Let's fix that:
 
-```
+```coffeescript
 SimpleError = Ember.Object.extend
   init: ->
     @set('emberized_errors', Ember.Object.create(@get('error')))
@@ -78,7 +78,7 @@ Now we've made another local property to hold the Ember Object equivalent of the
   
 DS.Errors exposes individual fields error messages by looking them up as properties. However we don't know ahead of time what the errors are going to be. So we need a method to lookup errors for arbitrary properties. Fortunately, ember exposes `unknownProperty` which works a bit like ruby's `method_missing`
 
-```
+```coffeescript
 unknownProperty: (key) ->
   errors = @_errorsFor(key)
   arr = Ember.A([])
@@ -93,7 +93,7 @@ _errorsFor: (property) ->
 
 Now we can look up error message associated with arbitray properties. Which means you can display property error messages just like explained in the DS.Errors documentation:
 
-```
+```coffeescript
 <label>Username: {{input value=username}} </label>
 {{#each errors.username}}
   <div class="error">
@@ -106,7 +106,7 @@ Now we can look up error message associated with arbitray properties. Which mean
 
 We still need the capability to return all error messages, for this we will use a computed property:
 
-```
+```coffeescript
 messages: (->
   errors = @get('errors')
   allErrors = []
@@ -132,7 +132,7 @@ Here we moved generating the messages objects into it's own method, and we build
 
 Another extension to this might be a fullMessages computed property that automatically prepends the property name to the message ala rails, but I'm pretty happy with this approach. The full class is below, I hope you found this useful
 
-```
+```coffeescript
 `import Ember from 'ember'`
 
 SimpleError = Ember.Object.extend
