@@ -93,14 +93,16 @@ _errorsFor: (property) ->
 
 Now we can look up error message associated with arbitray properties. Which means you can display property error messages just like explained in the DS.Errors documentation:
 
-```
+{% highlight html %}
+{% raw %}
 <label>Username: {{input value=username}} </label>
 {{#each errors.username}}
   <div class="error">
     {{message}}
   </div>
 {{/each}}
-```
+{% endraw %}
+{% endhighlight %}
 
 ### Displaying all messages
 
