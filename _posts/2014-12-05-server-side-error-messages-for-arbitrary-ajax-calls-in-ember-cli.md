@@ -49,7 +49,7 @@ If this was an ember data `save()` call with the ActiveModelAdapter, we could us
 
 1. Should be able to get errors via errors.fieldName
 2. Should be able to get a list of all errors via errors.messages
-3. Both should be arrays of objcets with a message property
+3. Both should be arrays of objects with a message property
 4. Everything should quack like an Ember Object
 
 ## Getting Started on the SimpleErrors Object
