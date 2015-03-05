@@ -131,5 +131,20 @@ form.valid? # => false
 
 I really like the result. Now I can extract complex validation logic into tiny modules that will be easier to find and maintain than dozens of conditional methods on the Form class. If you have complicated validation needs, I hope you will find this helpful.
 
+EDIT:
+
+I took this one step further, and wrapped up the declarations in another class macro:
+
+```ruby
+module ValidationsPolicy
+  # ...
+  included do
+    def self.validates_presence_of_by_policy(attribute)
+      self.validates attribute, presence: true, if: "#{attribute.to_s}_presence_required_by_policy".to_sym
+    end
+  end
+end
+```
+
 [gist-of-broken-dreams]: https://gist.github.com/thechrisoshow/2236521
 [rails-issue]: https://github.com/rails/rails/issues/5449
