@@ -5,7 +5,7 @@ author: DVG
 comments: true
 ---
 
-I'm currently working on a form where a couple attributes of the underlying model can drastically affect the validations are necessary. There are around 13 attributes, and 25 permutations of validations.
+I'm currently working on a form where a couple attributes of the underlying model can drastically affect which validations are necessary. There are around 13 attributes, and 25 permutations of validations.
 
 I don't really like the idea of the form class topping out at hundreds of lines of conditional methods, so I started looking into what I could accomplish by applying what I'm calling a `Validation Policy` on the specific instance.
 
