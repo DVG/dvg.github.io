@@ -18,7 +18,7 @@ My first idea was to simply open up the singleton class of a given instance of t
 ```ruby
 module ValidationPolicy
   def apply_validation_policy(policy)
-    singleton_class do
+    singleton_class.instance_eval do
       include policy
     end
   end
