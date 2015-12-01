@@ -171,7 +171,7 @@ Then(/^I click on the shopping cart$/) do
 end
 ```
 
-See how the "plain english" is just a wrapper around very simple capybara calls? This isn't much of a maintenance improvement.
+See how the "plain english" is just a wrapper around very simple capybara calls? This isn't much of a maintenance improvement at all.
 
 So our problems are now:
 
